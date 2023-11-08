@@ -27,7 +27,9 @@ in
             name = artifactPath url + ".metadata.json";
             path = writeText "metadata.json" (toJSON {
               inherit url;
-              headers = {};
+              headers = {
+               "content-type" = "application/javascript; charset=utf-8";
+              };
             });
           }
         ]
