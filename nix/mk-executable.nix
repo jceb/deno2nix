@@ -20,7 +20,7 @@
   inherit (deno2nix.internal) mkDepsLink findImportMap;
 
   allowflag = flag: (
-    if (allow ? flag) && allow."${flag}"
+    if (allow ? "${flag}") && allow."${flag}"
     then ["--allow-${flag}"]
     else []
   );
